@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Register to VoterData</h1>
+<form action="/signup" method="post">
+    <p><label>Username<input type="text" name="username" value= {{username}}></label>
+    {% with username_errors = get_flashed_messages(category_filter=["username_error"]) %}
+    {% if username_errors %}
+      <ul>
+        {%- for msg in username_errors %}
+        <li>{{ msg }}</li>
+        {% endfor -%}
+      </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
+    </p>
+
+
+    <p><label>Password<input type="password" name="password"/></label>
+    {% with password_errors = get_flashed_messages(category_filter=["password_error"]) %}
+    {% if password_errors %}
+      <ul>
+        {%- for msg in password_errors %}
+        <li>{{ msg }}</li>
+        {% endfor -%}
+      </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
+    </p>
+
+
+    <p><label>Verify Password<input type="password" name="verify"/></label>
+    {% with verify_errors = get_flashed_messages(category_filter=["verify_error"]) %}
+    {% if verify_errors %}
+      <ul>
+        {%- for msg in verify_errors %}
+        <li>{{ msg }}</li>
+        {% endfor -%}
+      </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
+    </p>
+
+    <p><input type="submit" value="Sign-up"/></p>
+</form>
+
+{% endblock %}

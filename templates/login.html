@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Log in to VoterData</h1>
+<p>If you don't have an account, you may <a href="/signup">register</a> for one</p>
+<form action="/login" method="post">
+    <table>
+        <tr>
+            <td><label for="username">Username</label>
+            {% with login_errors = get_flashed_messages(category_filter=["login_error"]) %}
+                {% if login_errors %}
+                  <ul class="errors">
+                    {%- for msg in login_errors %}
+                        <li>{{ msg }}</li>
+                    {% endfor -%}
+                  </ul>
+                </div>
+                {% endif %}
+            {% endwith %}
+            </td>
+            <td>
+                <input name="username" type="text" value="{{ username }}">
+            {% with login_errors = get_flashed_messages(category_filter=["login_pw_error"]) %}
+                {% if login_pw_errors %}
+                  <ul class="errors">
+                    {%- for msg in login_pw_errors %}
+                        <li>{{ msg }}</li>
+                    {% endfor -%}
+                  </ul>
+                </div>
+                {% endif %}
+            {% endwith %}
+            </td>
+        </tr>
+        <tr>
+            <td><label for="password">Password</label></td>
+            <td>
+                <input name="password" type="password">
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Login">
+
+</form>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+            <style>
+                .errors{
+                    color: red;
+                    font-weight: bold;
+                    font-style: italic;
+                    
+                }
+            </style>
+  <title>VoterData</title>
+      <a href="login">Login</a>
+      <a href="signup">Create Account</a>
+      <a href="/">Home</a>
+      <a href="/allvoters">All Voters</a>
+      <a href="/tasks">My Tasks</a>
+      <a href="/search">Search</a> 
+    </head>
+    <body>
+        <div style='float: right'>
+          {% if 'user' in session %}
+            {{ session['user'] }}
+            <form action="/logout" method="post" id='logout'>
+              <input type="submit" value="Log Out" />
+            </form>
+          {% endif %}
+        </div>
+
+
+    
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

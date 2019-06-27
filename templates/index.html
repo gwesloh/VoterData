@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+ 
+<div class="upload">
+<h1>File upload</h1>
+
+<p>Upload an excel document or .csv file</p>
+<form action="/upload">
+  Select a file: <input type="file" name="myFile"><br><br>
+  <input type="submit">
+</form>
+
+</div>
+
+
+{% endblock %}

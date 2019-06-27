@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block content %}
+  
+<h2>Search:</h2>
+<div class="search_columns">
+<h3>Search by keyword :</h3>
+<p>In column: </p> 
+<form action="/search">
+  <select name="existing_columns">
+  	<option value="Select">Select</option>
+    <option value="first_name_column">First Name</option>
+    <option value="last_name_column">Last Name</option>
+    <option value="email_column">Email</option>
+    <option value="phone_number_column">Phone Number</option>
+    <option value="address_column">Address</option>
+    <option value="city_column">City</option>
+    <option value="state_column">State</option>
+    <option value="zip_code_column">Zip Code</option>
+  </select> 
+  <p>Search for results that</p>
+ <input type="radio" name="inexclude" value="include" checked> Contain<br>
+  <input type="radio" name="inexclude" value="exclude"> Do Not Contain<br>
+  <br><br>
+  The following: 
+  
+  <input type="text" name="searchterm"><br>
+  
+  <br><br>
+  
+  <input type="radio" name="andordone" value="done" checked> Done<br>
+  <input type="radio" name="andordone" value="and"> And<br>
+  <input type="radio" name="andordone" value="or"> Or<br>
+  
+  <p>link to add another "Search by keyword"</p> 
+</div>
+  
+  <div class="search_tags">
+<h3>Search by tag:</h3>
+
+<p>Search for results that:</p>
+ <input type="radio" name="inexcludetag" value="include" checked> Contain<br>
+  <input type="radio" name="inexcludetag" value="exclude"> Do Not Contain<br>
+  <br><br>
+  The following tag :  
+
+  <select name="existing_tags">
+  	<option value="Select">Select</option>
+    <option value="supporter_tag">Supporter</option>
+    <option value="opponent_tag">Opponent</option>
+    <option value="neutral_tag">Neutral</option>
+    <option value="unknown_stance_tag">Unknown stance</option>
+  </select> 
+  
+  <br><br>
+  
+  <input type="radio" name="andordonetag" value="done" checked> Done<br>
+  <input type="radio" name="andordonetag" value="and"> And<br>
+  <input type="radio" name="andordonetag" value="or"> Or<br>
+  
+  <p>link to add another "Search by tag"</p> 
+
+  
+</div>
+  
+  <h2>Results:</h2>
+
+
+<p>For search results please display the following columns: </p>
+<div class="display_columns">
+Column 1:
+
+  <select name="existing_columns">
+  	<option value="Select">Select</option>
+    <option value="first_name_column">First Name</option>
+    <option value="last_name_column">Last Name</option>
+    <option value="email_column">Email</option>
+    <option value="phone_number_column">Phone Number</option>
+    <option value="address_column">Address</option>
+    <option value="city_column">City</option>
+    <option value="state_column">State</option>
+    <option value="zip_code_column">Zip Code</option>
+  </select> 
+  <br><br>
+  </div>
+  Column 2:
+
+  <select name="existing_columns">
+  	<option value="Select">Select</option>
+    <option value="first_name_column">First Name</option>
+    <option value="last_name_column">Last Name</option>
+    <option value="email_column">Email</option>
+    <option value="phone_number_column">Phone Number</option>
+    <option value="address_column">Address</option>
+    <option value="city_column">City</option>
+    <option value="state_column">State</option>
+    <option value="zip_code_column">Zip Code</option>
+  
+</select>
+<br><br>
+ 
+  
+  
+  Column 3:
+
+  <select name="existing_columns">
+  	<option value="Select">Select</option>
+    <option value="first_name_column">First Name</option>
+    <option value="last_name_column">Last Name</option>
+    <option value="email_column">Email</option>
+    <option value="phone_number_column">Phone Number</option>
+    <option value="address_column">Address</option>
+    <option value="city_column">City</option>
+    <option value="state_column">State</option>
+    <option value="zip_code_column">Zip Code</option>
+  </select> 
+  <br><br>
+
+  <p>link to add another "Display Column"</p>   
+
+  <input type="submit">
+</form>
+
+</body>
+</html>
+
+
+
+
+{% endblock %}

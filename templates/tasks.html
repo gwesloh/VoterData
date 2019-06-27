@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="taskmapcolumn">
+<h2>Task: {new_column} </h2>
+<p>The {new_column} column should map to the following existing column:</p>
+
+<form action="/mapcolumns">
+    <select name="existing_columns">
+        <option value="Select">Select</option>
+        <option value="first_name_column">First Name</option>
+        <option value="last_name_column">Last Name</option>
+        <option value="email_column">Email</option>
+        <option value="phone_number_column">Phone Number</option>
+        <option value="address_column">Address</option>
+        <option value="city_column">City</option>
+        <option value="state_column">State</option>
+        <option value="zip_code_column">Zip Code</option>
+    </select> 
+  <br><br>
+  <input type="submit">
+</form>
+</div>
+
+<div class="taskmapvoter">
+    <h2>Task: {new_voter} </h2>
+    <p>This new voter: {new_voter}  looks like it might match the existing voter: {existing_voter}</p>
+    
+    <form action="/mapvoters">
+        <input type="radio" name="mapvoter" value="done" checked>Create a new voter<br>
+        <input type="radio" name="mapvoter" value="and"> Merge the two voters(add only data that was missing)<br>
+        <input type="radio" name="mapvoter" value="or"> Overwrite the Existing Voter<br>
+      <br><br>
+      <input type="submit">
+    </form>
+    </div>
+{% endblock %}
